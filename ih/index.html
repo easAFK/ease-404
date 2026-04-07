@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+.navbar {
+  background: white;
+  padding: 20px 40px;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  color: #6b5b3e;
+  font-weight: normal;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #6b5b3e;
+  font-size: 15px; /*14px*/
+  letter-spacing: 1px;
+  padding: 8px 10px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a:hover {
+    color: #b89b3c;
+}
+
+.lobby {
+  background:  #FDFD96;
+  padding: 60px 40px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.lobby-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.lobby-image img {
+  width: 280px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 50% / 40%;
+  border: 8px solid #b89b3c;
+}
+
+
+.lobby-text {
+  max-width: 500px;
+}
+
+.lobby-text h2 {
+  font-size: 42px;
+  color:#6b5b3e;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.lobby-text p {
+  font-size: 14px;
+  color:#6b5b3e;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #8a6b1f;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn:hover {
+    background-color:#b89b3c ;
+}
+
+/*ABOUT*/
+
+.about {
+  display: flex;
+  min-height: 100vh;
+}
+
+.about-text {
+  flex: 1;
+  background-color: #FD96B5;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+.about-text h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #7a6a3a;
+  margin-bottom: 10px;
+}
+.about-text h1 {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a4125;
+  max-width: 500px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a4125;
+  max-width: 500px
+}
+
+.about-image {
+  flex: 1;
+  background-color: /*#96FDFF;*/  #FDFD96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.about-image img {
+  width: 280px;
+  border: 2px solid #5c4a1f;
+}
+
+/*t*/
+/*
+.interest {
+  text-align: center;
+  background-color: #FDFD96;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px;
+  min-height: 100vh;
+  align-items: center;
+}
+*/
+.interest {
+  text-align: center;
+  background-color: #FDFD96;
+  padding: 60px 40px;
+  min-height: 100vh;
+}
+.interest-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color:  #4a4125;
+  
+}
+
+/*
+.interest-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+*/
+.interest-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+
+.card {
+  background: white;
+  border-radius: 12px;
+  width: 250px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+/*TECH*/
+.tech-stack {
+  text-align: center;
+  padding: 60px 40px;
+  background-color:  #FD96B5;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.tech-stack h2 {
+  margin-bottom: 30px;
+  color: #4a4125;
+}
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.tech-icons img {
+  width: 100px;
+  height: 80px;
+  padding: 15px;
+  background: white;
+  border-radius: 15px;
+
+}
+.tech img:hover {
+  transform: scale(1.2);
+}
+
+/*PROJECTS*/
+.projects {
+  padding: 40px;
+  text-align: center;
+  background-color: #FDFD96;
+}
+
+.projects h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color:  #4a4125;
+}
+
+.midterms {
+  font-size: 24px;
+  margin: 30px 0 20px;
+  border-left: 5px solid #FDFD96;
+  padding-left: 10px;
+  text-align: left;
+  color: #5c4a1f;
+}
+
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: stretch ;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CARD DESIGN */
+.project-card {
+  background: beige;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+/*.project-card {
+  background: beige;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  display: flex;
+  min-height: 350px;
+  width: 100%;
+  max-width: 280px;
+}
+*/
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  padding: 5px;
+}
+
+.project-card h3 {
+  margin: 10px;
+  color: #5c4a1f;
+}
+
+.project-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color:#5c4a1f
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: auto;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons a {
+  display: inline-block;
+  background: pink;
+  padding: 15px 80px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #6b5b3e;
+  font-size: 13px;
+  text-align: center;
+}
+
+details {
+ /* margin-top: 10px;
+  background: #FD96B5;
+  padding: 10px;
+  border-radius: 8px;*/
+  margin: 0;
+  text-align: center;
+  display:inline-block;
+}
+
+summary {
+  background: pink;
+  padding: 15px 86px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  text-align: center;
+  color: #6b5b3e;
+}
+
+.code-img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.midterms, .finals {
+  text-align: center;
+  border: none;
+}
+.buttons a, summary {
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 150px;
+}
+
+/*
+.midterm {
+  background-color:  #FDFD96;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 8px 20px gray;
+  text-align: center;
+  border-left: 5px dashed white;
+  border-right:20px solid white;
+}
+.projects {
+  text-align: center;
+  color: #6b5b3e;
+}
+
+.finals {
+  background-color:  #FDFD96;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 8px 20px gray;
+  text-align: center;
+  border-left: 5px dashed white;
+  border-right:20px solid white;
+
+}
+*/
+
+
+.contacts{
+  text-align: center;
+  padding: 30px;
+  background-color: white;
+}
+/*
+.divider {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+  */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #b89b3c, transparent);
+  margin: 40px 0;
+}
+
+/*
+ @media (max-width: 768px) {
+   .lobby {
+    min-height: auto;
+    padding: 40px 20px;
+   }
+   
+    .about {
+      flex-direction: column;
+      min-height: auto;
+    }
+  
+    .card {
+      width: 45%;
+    }
+    
+}
+*/
+
+@media (max-width: 768px) {
+
+  .lobby-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lobby-image img {
+    width: 200px;
+    height: 260px;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about-text, .about-image {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .interest-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .tech-icons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tech-icons img {
+    width: 80px;
+    height: 70px;
+  }
+
+  .midterms, .finals {
+    margin: 10px;
+    color: #5c4a1f;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-text, .about-image {
+  width: 100%;
+  padding: 40px;
+}
+.about-text h1 {
+  font-size: 32px;
+}
+</style>
+<body>
+
+ 
+  <header class="navbar">
+    <nav>
+    <h1 class="logo">Easa</h1>
+      <ul>
+        <li><a href="#about">About </a></li>
+        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <section class="lobby">
+    <div class="lobby-container">
+
+      
+      <div class="lobby-image">
+      <img src="https://i.ibb.co/9HKFVgbF/IMG-20260331-145538-930.jpg" alt="IMG 20260331 145538 930" border="0">
+      </div>
+
+  
+      <div class="lobby-text">
+        <h2>Hi there,<br>I'm Ysabel! &#x2600;&#xFE0F; </h2>
+        <p>
+       In the process of becoming someone who can turn ideas into impactful and meaningful creations.
+        </p>
+        <a href="https://www.facebook.com/share/185pq3LYT1/" target="_blank" class="btn">LET'S CONNECT</a>
+      </div>
+   </div>
+  </section>
+  <div class="divider"></div>
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>About</h2>
+      <h1>Hey, I'm Ysabel</h1>
+      <p>I'm currently an IT student, still exploring where I truly belong, but learning along the way. <br> I enjoy creating simple and clean designs, and I like the process of turning ideas into something real. Outside of tech, I'm interested in reading, watching, and personal growth. <br> I beleieve that not everything has to be figured out right away, and I'm open to learning, improving, and discovering my own path.</p>
+    </div>
+
+    <div class="about-image">
+      <img src="https://i.ibb.co/RpDJrkqm/IMG-20260331-153044-992.jpg" alt="IMG 20260331 153044 992" border="0">
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <section class="interest" id="interest">
+      <h2 class="interest-title">Interests</h2>
+      
+      <div class="interest-container">
+      <div class="card">
+        <img src="https://i.ibb.co/nMbtTnYs/Screenshot-20260331-022557.png" alt="Screenshot 20260331 022557" border="0">
+        <p>I love diving into books and exploring new stories and ideas.</p>
+      </div>
+
+      <div class="card">
+      <img src="https://i.ibb.co/NgTRPydR/Screenshot-20260331-022731.png" alt="Screenshot 20260331 022731" border="0">
+        <p>I enjoy watching! I'm into animes, k dramas, and english series or movies.</p>
+      </div>
+
+      <div class="card">
+      <img src="https://i.ibb.co/yFGmTytP/Screenshot-20260331-022612.png" alt="Screenshot 20260331 022612" border="0">
+      <p>I like immersing myself in music to relax, feel, or get inspired.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <section class="tech-stack" id="tech">
+    <h2>Tech Stack</h2>
+
+    <div class="tech-icons">
+      <img src="https://i.ibb.co/ycchXxJN/Black-and-White-Geometri-Open-Here-Square-Sticker-20260331-162241-0000.jpg" alt="Black and White Geometri Open Here Square Sticker 20260331 162241 0000" border="0">
+      <img src="https://i.ibb.co/x8239JgP/Black-and-White-Geometri-Open-Here-Square-Sticker-20260331-162241-0001.jpg" alt="Black and White Geometri Open Here Square Sticker 20260331 162241 0001" border="0">
+      <img src="https://i.ibb.co/8L2PCnqT/Black-and-White-Geometri-Open-Here-Square-Sticker-20260331-162241-0002.jpg" alt="Black and White Geometri Open Here Square Sticker 20260331 162241 0002" border="0">
+      <img src="https://i.ibb.co/HfBSnVQ0/Black-and-White-Geometri-Open-Here-Square-Sticker-20260331-162241-0003.jpg" alt="Black and White Geometri Open Here Square Sticker 20260331 162241 0003" border="0">
+    </div>
+  </section>
+  
+ <div class="divider"></div>
+  
+ <section class="projects" id="projects">
+   
+  
+ <!-- <h3><br>Midterm Task</br></h3>  
+<div class="midterm" id="midterm">
+  <h1>My Projects</h1>
+  <h2>MIDTERM</h2>
+  <p>Midterm Lab Task 1</p>
+  <a href="resume.html" target="_blank" style="text-decoration: none;">Resume</a></br>
+  <p>Midterm Lab Task 2</p>
+  <a href="act 2.html" target="_blank" style="text-decoration: none;">HTML List and Tables</a></br>
+  <p>Midterm Lab Task 3</p>
+  <a href="log in.html" target="_blank" style="text-decoration: none;">Registration Form</a></br>
+  <p>Midterm Lab Task 4</p>
+  <a href="mt4.html" target="_blank" style="text-decoration: none;">Image Map</a></br>
+  <p>Midterm Lab Task 5</p>
+  <a href="css resume.html" target="_blank" style="text-decoration: none;">Applying CSS in your Resume</a></br>
+  <p>Midterm Task 6</p>
+  <a href="mtt6.html" target="_blank" style="text-decoration: none;">HTML Layout using Divs and Semantics</a></br>
+  </div>
+ 
+  <div class="finals" id="finals">
+    <h2>FINALS</h2>
+    <p>Finals Lab Task 1</p>
+    <a href="no style.html" target="_blank" style="text-decoration: none;">Responsive Layout using Flex</a></br>
+    <p>Finals Lab Task 2</p>
+    <p>Finals Lab Task 3</p>
+  </div>
+  </section> -->
+  <h1>My Projects</h1>
+  <h2 class="midterms">Midterms</h2>
+
+  <div class="projects-container">
+
+    <div class="project-card">
+      <a href="https://ibb.co/hRtc363j"><img src="https://i.ibb.co/8DSb1C1p/1.png" alt="1" border="0"></a>
+      <h3>Task 1</h3>
+      <p>Resume</p>
+      <div class="buttons">
+        <a href="resume.html"><b>Output</b></a>
+        <details>
+       <summary>Code</summary>
+        <a href="https://ibb.co/xtycfGyC"><img src="https://i.ibb.co/v6brQmbw/resume-ss.png" alt="resume ss" border="0" width="500" height="500" class="code-img"></a>
+        </details>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <a href="https://ibb.co/ymJ9yHzg"><img src="https://i.ibb.co/TD5f89QP/2.png" alt="2" border="0"></a>
+      <h3>Task 2</h3>
+      <p>HTML Tables</p>
+      <div class="buttons">
+        <a href="act-2.html"><b>Output</b></a>
+        <details>
+        <summary>Code</summary>
+         <a href="https://ibb.co/MyLpZZts"><img src="https://i.ibb.co/HLQYBBbV/act2-ss.png" alt="act2 ss" border="0" width="500" height="500" class="code-img"></a>
+         </details>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <a href="https://ibb.co/qYzdthhH"><img src="https://i.ibb.co/PGRN7JJ2/3.png" alt="3" border="0"></a>
+      <h3>Task 3</h3>
+      <p>Registration Form</p>
+      <div class="buttons">
+        <a href="log-in.html"><b>Output</b></a>
+        <details>
+        <summary>Code</summary>
+         <a href="https://ibb.co/V0xphYRP"><img src="https://i.ibb.co/KcDzQxd3/login-ss.png" alt="login ss" border="0" width="500" height="500" class="code-img"></a>
+         </details>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <a href="https://ibb.co/YBsS8fd2"><img src="https://i.ibb.co/PGHy41Wx/4.png" alt="4" border="0"></a>
+      <h3>Task 4</h3>
+      <p>Image Map</p>
+      <div class="buttons">
+        <a href="mt4.html"><b>Output</b></a>
+        <details>
+        <summary>Code</summary>
+         <a href="https://ibb.co/tpfW0rp9"><img src="https://i.ibb.co/MkT3z0km/mt4-ss.png" alt="mt4 ss" border="0" width="500" height="500" class="code-img"></a>
+         </details>
+      </div>
+    </div>
+
+    <div class="project-card">
+     <a href="https://ibb.co/Kc8Vjvrn"><img src="https://i.ibb.co/hxT2Rzm0/5.png" alt="5" border="0"></a>
+      <h3>Task 5</h3>
+      <p>CSS Resume</p>
+      <div class="buttons">
+        <a href="css-resume.html"><b>Output</b></a>
+        <details>
+        <summary>Code</summary>
+        <a href="https://ibb.co/f3MSXBy"><img src="https://i.ibb.co/1CZn0hP/cssresume-ss.png" alt="cssresume ss" border="0" width="500" height="500" class="code-img"></a>
+        </details>
+      </div>
+    </div>
+
+    <div class="project-card">
+     <a href="https://ibb.co/LhYxnTCr"><img src="https://i.ibb.co/5xGrBQ5k/6.png" alt="6" border="0"></a>
+      <h3>Task 6</h3>
+      <p>Layout Using Divs</p>
+      <div class="buttons">
+        <a href="mtt6.html"><b>Output</b></a>
+        <details>
+       <summary>Code</summary>
+        <a href="https://ibb.co/wZh7CJn4"><img src="https://i.ibb.co/LDdr6QT1/mt6-ss.png" alt="mt6 ss" border="0" width="500" height="500" class="code-img"></a>
+        </details>
+      </div>
+    </div>
+  </div>
+<br>
+  <h2 class="finals">Finals</h2>
+  <div class="projects-container">
+
+    <div class="project-card">
+      <a href="https://ibb.co/0yGw737Z"><img src="https://i.ibb.co/9HrMDjD2/7.png" alt="7" border="0"></a>
+      <h3>Final Task 1</h3>
+      <p>Responsive Layout</p>
+      <div class="buttons">
+        <a href="no-style.html"><b>Output</b></a>
+        <details>
+       <summary>Code</summary>
+        <a href="https://ibb.co/39wDNxhK"><img src="https://i.ibb.co/rRgC6By9/nostyle-ss.png" alt="nostyle ss" border="0" width="500" height="500" class="code-img"></a>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="divider"></div>
+  <footer class="contacts" id="contacts">
+<p> Contact me:</p>
+<a href="https://www.facebook.com/share/185pq3LYT1/" target="_blank">
+  <img src="https://i.ibb.co/7NLNKBh0/IMG-20260404-152802-261.jpg" alt="IMG 20260404 152802 261" border="0" width="30">
+</a>
+  </footer>
+</body>
+</html>
