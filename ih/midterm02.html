@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+</head>
+<style>
+    body{
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vh;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 150px  150px 150px 150px;
+        grid-template-rows: 120px 120px 120px;
+        gap: 10px;
+    }
+
+    .eh{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .gray{
+        background: gray;
+    }
+
+    .black{
+        background: black;
+    }
+
+    .yellow{
+        background: yellow;
+    }
+
+    .tall-left{
+        grid-row: 1 / 4;
+    }
+
+    .top-wide{
+        grid-column: 2 / 4;
+    }
+
+    .tall-right{
+        grid-row: 2 / 4;
+        grid-column: 4;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="eh gray tall-left"></div>
+        <div class="eh gray top-wide"></div>
+        <div class="eh black"></div>
+
+        <div class="eh yellow"></div>
+        <div class="eh black"></div>
+        <div class="eh gray tall-right"></div>
+
+        <div class="eh black"></div>
+        <div class="eh yellow"></div>
+    </div>
+</body>
+</html>

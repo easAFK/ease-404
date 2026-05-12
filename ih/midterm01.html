@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm
+    </title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: white;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+        gap: 20px;
+        background-color: bisque;
+
+    }
+
+    .home{
+        color: white;
+    }
+
+    .search{
+        width: 300px;
+        border-radius: 20px;
+        border: none;
+        padding: 8px;
+    }
+
+    .download-button{
+        background: bisque;
+        color: white;
+        padding: 8px 15px;
+        border: 1px solid white;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+
+    .square{
+        border: 3px solid bisque;
+        padding: 20px;
+        width: 350px;
+        background-color: white;
+        margin: 80px auto;
+
+    }
+
+    .square h2{
+        margin-bottom: 20px;
+        color: black;
+    }
+
+    .input-box{
+       width: 95%;
+       padding: 15px;
+       margin-bottom: 15px;
+       border: none;
+       background-color: bisque;
+       font-size: 14px;
+    }
+
+    .button-container{
+        display: flex;
+        gap: 10px;
+    }
+
+    .button{
+        flex: 1;
+        padding: 12px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        width: 70%;
+
+    }
+
+    .req{
+        background-color: black;
+        color: white;
+    }
+    
+    .sched{
+        background-color:lightgrey;
+
+    }
+
+    .button:hover{
+        opacity: 0.8;
+    }
+</style>
+<body>
+    <div class="navbar">
+        <div class="home">Home</div>
+        <input type="text" class="search" placeholder="Search">
+        <button class="download-button">Download</button>
+    </div>
+
+
+    <div class="container">
+   
+        <div class="square">
+        <h2>Request a ride now</h2>
+        <input type="text" class="input-box" placeholder="Enter pickup location">
+        <input type="text" class="input-box" placeholder="Enter destination">
+
+        <div class="button-container">
+            <button class="button req">Request Now</button>
+            <button class="button sched">Schedule for later</button>
+        </div>
+        </div>
+
+    
+</body>
+</html>
